@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "cli-spinners": "^2.2.0",
+    "ora": "^4.0.3"
+  }
+}
