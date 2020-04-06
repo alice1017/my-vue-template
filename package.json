@@ -1,4 +1,7 @@
 {
+  "name": "my-vue-template",
+  "description": "A vue-cli custom template for me.",
+  "license": "MIT",
   "dependencies": {
     "cli-spinners": "^2.2.0",
     "ora": "^4.0.3"
