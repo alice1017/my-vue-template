@@ -14,7 +14,12 @@ module.exports = {
     },
     resolve: {
         alias: {
-            "vue$": "vue/dist/vue.esm.js"
+            "vue$": "vue/dist/vue.esm.js",
+            "@components": join(resolve("src"), "components"),
+            "@modules": join(resolve("src"), "modules"),
+            {{#useVuex}}
+            "@store": join(resolve("src"), "store")
+            {{/useVuex}}
         }
     },
     module: {

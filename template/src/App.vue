@@ -1,13 +1,13 @@
 <template>
-    <hellow-world></hellow-world>
+    <hello-world></hellow-world>
 </template>
 
 <script>
-import HellowWorld from "./components/HellowWorld.vue";
+import HelloWorld from "@components/HelloWorld.vue";
 export default {
     name: "App",
     components: {
-        HellowWorld
+        HelloWorld
     }
 }
 </script>
