@@ -99,7 +99,7 @@ module.exports = {
         },
         autoInstall: {
             type: "confirm",
-            message: "run 'yarn install' after",
+            message: "Install dependencies automatically or not?",
             default: true
         }
     },
