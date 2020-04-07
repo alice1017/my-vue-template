@@ -1,0 +1,17 @@
+{
+    "include": ["./src/**/*"],
+    "compilerOptions": {
+        "module": "es6",
+        "baseUrl": "./",
+        "paths": {
+            "@components/*": ["src/components/*"],
+            "@modules/*": ["src/modules"]{{#useVuex}},
+            "@store/*": ["src/store"]{{/useVuex}}
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
+

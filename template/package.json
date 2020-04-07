@@ -7,20 +7,27 @@
     "scripts": {
         "build": "webpack --mode production",
         "dev": "webpack --mode development",
-        "watch": "webpack --mode development --watch"
+        "watch": "webpack --mode development --watch",
+        "test": "jest"
     },
     "devDependencies": {
         "@babel/cli": "^7.2.3",
         "@babel/core": "^7.3.4",
         "@babel/polyfill": "^7.4.4",
         "@babel/preset-env": "^7.3.4",
+        "@vue/test-utils": "^1.0.0-beta.32",
+        "babel-core": "^7.0.0-bridge.0",
         "babel-eslint": "^10.0.1",
+        "babel-jest": "^25.2.6",
         "babel-loader": "^8.0.5",
         "core-js": "3",
         "css-loader": "^3.2.0",
         "eslint": "^5.15.0",
+        "jest": "^25.2.7",
+        "jest-serializer-vue": "^2.0.2",
         "regenerator-runtime": "^0.13.2",
         "style-loader": "^1.0.0",
+        "vue-jest": "^3.0.5",
         "vue-loader": "^15.9.0",
         "vue-template-compiler": "^2.6.11",
         "webpack": "^4.29.6",
