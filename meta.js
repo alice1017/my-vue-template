@@ -1,7 +1,5 @@
 const path = require("path");
 const spawn = require("child_process").spawn;
-const spinners = require("cli-spinners");
-const ora = require("ora");
 
 function runCommand(cmd, args, data) {
     const dirName = data.inPlace ? "": data.destDirName;
@@ -29,15 +27,11 @@ function installDependencies(data) {
     return new Promise(resolve => {
         if (data.autoInstall) {
 
-            //process.stdout.write("   Install dependencies... ");
-            const spinner = buildSpinner("   Install dependencies... ");
-            spinner.start();
-
+            process.stdout.write("   Install dependencies... ");
             const proc = runCommand("yarn", ["install"], data);
 
             proc.on("exit", () => {
-                spinner.stop();
-                console.log("   Install dependencies... done.")
+                console.log("done.")
                 resolve();
             });
         }
@@ -49,15 +43,11 @@ function installDependencies(data) {
 
 function initializeGit(data) {
     if (data.useGit) {
-        //process.stdout.write("   Initialize Git... ");
-        const spinner = buildSpinner("   Initialize Git... ");
-        spinner.start();
-
+        process.stdout.write("   Initialize Git... ");
         const proc = runCommand("yarn", ["install"], data);
 
         proc.on("exit", () => {
-            spinner.stop();
-            console.log("   Initialize Git... done.")
+            console.log("done.")
         });
     }
     else {
