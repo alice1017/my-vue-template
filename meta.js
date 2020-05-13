@@ -16,13 +16,6 @@ function runCommand(cmd, args, data) {
     return proc;
 }
 
-function buildSpinner(msg) {
-    return ora({
-        prefixText: msg,
-        spinner: spinners.line,
-    });
-}
-
 function installDependencies(data) {
     return new Promise(resolve => {
         if (data.autoInstall) {
@@ -44,7 +37,7 @@ function installDependencies(data) {
 function initializeGit(data) {
     if (data.useGit) {
         process.stdout.write("   Initialize Git... ");
-        const proc = runCommand("yarn", ["install"], data);
+        const proc = runCommand("git", ["init"], data);
 
         proc.on("exit", () => {
             console.log("done.")
@@ -87,6 +80,11 @@ module.exports = {
             message: "Use Buefy or not?",
             default: true
         },
+        doTest: {
+            type: "confirm",
+            message: "Do you write tests?",
+            default: true
+        },
         autoInstall: {
             type: "confirm",
             message: "Install dependencies automatically or not?",
@@ -94,7 +92,9 @@ module.exports = {
         }
     },
     filters: {
-        "src/store/**/*": "useVuex"
+        "src/store/**/*": "useVuex",
+        "src/components/HelloWorld.test.js": "doTest",
+        "src/modules/util.js": "doTest"
     },
     complete: data => {
         installDependencies(data)
